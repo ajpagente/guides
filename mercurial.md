@@ -1,6 +1,6 @@
 # Mercurial
 
-## Merging
+## Merge
 ### Merge two branches
 Say you want to merge `develop` branch to `default` branch.
 
@@ -15,7 +15,40 @@ Say you want to merge `develop` branch to `default` branch.
 3. Commit the merge
 4. Push to remote repository
 
+## Branch
+### Create a branch from another branch
+```
+1) hg update <parent branch>
+2) hg branch <new branch>
+```
+1. Set the current branch to the parent branch (ie. the branch you want to branch from)
+2. Create a new branch from the current branch
+
+### Determine a branch's parent 
+This method will also give you the changeset for the branch/tag.
+```
+hg log -r "parents(min(branch(<tag or branch)))"
+```
+
+## Versioning
+### Create a tag
+```
+1) hg update <branch>
+2) hg tag <tag name>
+3) hg push
+```
+1. Set the current branch to the branch you want to tag.
+2. Tag (Mercurial automatically commits the tag)
+3. Push the tag to the remote repository
+
+## Reverting Changes
+### Remove untracked files
+This method has been tested on MacOS.
+```
+hg status -un | xargs rm
+```
+
 ## Miscellaneous
-### Bypassing certificate checks
+### Bypass certificate checks
 It is not recommended to bypass certificate checks. This method should not be used if you are able to check the repository certificate.
 Say you want to clone without checking certificate using the `--insecure` option: `hg clone https:\<repo goes here> --insecure`
