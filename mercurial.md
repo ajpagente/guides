@@ -1,5 +1,16 @@
 # Mercurial
 
+## Files
+### Adding a new file
+```
+1. hg add <file>
+2. hg commit -m "Insert commit message here"
+3. hg push
+```
+1. Track the file
+2. Commit the tracking change
+3. Push to repository
+
 ## Merge
 ### Merge two branches
 Say you want to merge `develop` branch to `default` branch.
@@ -13,7 +24,7 @@ Say you want to merge `develop` branch to `default` branch.
 1. You need to be in the target branch (ie. the destination branch) when merging. 
 2. Perform the merge operation
 3. Commit the merge
-4. Push to remote repository
+4. Push to repository
 
 ## Branch
 ### Create a branch from another branch
@@ -39,7 +50,7 @@ hg log -r "parents(min(branch(<tag or branch)))"
 ```
 1. Set the current branch to the branch you want to tag.
 2. Tag (Mercurial automatically commits the tag)
-3. Push the tag to the remote repository
+3. Push the tag to the repository
 
 ## Reverting Changes
 ### Remove untracked files
