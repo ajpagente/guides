@@ -33,6 +33,7 @@
 * Delete a non-empty directory: `rm -r <directory>`
 * Create a empty file: `touch <file>`
   * If the file exists, a new file is NOT created. Touch modifies the modification and access date.  
+  
 #### Opening File in macOS
 * Open a file with the default GUI application for the file type: `open <file>`
 * Open the current directory in Finder: `open .`
@@ -77,3 +78,11 @@
 * Move directories to another directory: `mv <directory 1> <directory 2> <destination directory>`
 
 #### Deleting Files
+* Delete a file: `rm <file>`
+* Delete all files in the current directory: `rm *`
+* Delete empty directory: `rmdir <directory>`
+* Recursively delete the directroy and all of its contents: `rm -r <directory>`
+
+#### Safety switch `-i`
+* `-i` prompts before overwriting or deleting a file
+* Examples: `cp -i`,`mv -i`,`rm -i`
