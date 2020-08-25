@@ -88,3 +88,20 @@
 #### Safety switch `-i`
 * `-i` prompts before overwriting or deleting a file
 * Examples: `cp -i`,`mv -i`,`rm -i`
+
+### Using Bash Effectively
+#### Wildcards
+* __Star__ `*` matches anything and nothing
+  * List all files in the current directory: `ls *`
+  * List all files that starts with `a`: `ls a*`
+  * List all files that ends with `a`: `ls *a`
+  * List all files with `at` in the filename: `ls *at*`
+  * Move all text files ie. files with the extension `txt`: `mv *txt <destination directory>`
+  * List all directories which starts with `D` (bash is case-sensituive) and ends with `s`: `ls -d D*s`
+* __Question mark__ `?` matches 1 character
+* __Square brackets__ `[]` matches one of the characters in between the opening and closing bracket
+  * Example: `[acd_7]`
+  * A _caret_ `^` reverses the meaning. 
+    * Example `[^art]` matches any character except a,r,t
+  * _Ranges_ example: `[a-z],[0-9],[A-C3-6]`
+  
