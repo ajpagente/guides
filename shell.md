@@ -1,3 +1,5 @@
+# All About Shells :shell:
+
 ## Bash
 ### Environment
 * Check that you are using bash: `echo $BASH`
