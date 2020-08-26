@@ -11,6 +11,19 @@
 2. Commit the tracking change
 3. Push to repository
 
+### Removing an existing file
+For situations where in you have a tracked file and want to delete the file.
+```
+1. rm <file>
+2. hg remove <file>
+3. hg commit -m "Insert commit message here"
+4. hg push
+```
+1. Delete the file. On `hg status`, there will be a `!` before the deleted file's name.
+2. Untrack the file
+4. Commit the tracking change
+5. Push to repository
+
 ## Merge
 ### Merge two branches
 Say you want to merge `develop` branch to `default` branch.
