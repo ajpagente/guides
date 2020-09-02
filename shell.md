@@ -121,7 +121,7 @@ touch {a..c}{1..3}.txt => touch a1.txt a2.txt a3.txt b1.txt (and so on)
 mv *{txt,jpg} Documents => mv *txt *jpg Documents
 mv filea?.{jpg,txt} Documents => mv filea?.jpg filea?.txt Documents
 ```
-:tip: Use `echo` to try out brace and wildcard expansion
+:memo: Use `echo` to try out brace and wildcard expansion
 ```
 echo a{1..3}
 echo D*
@@ -135,4 +135,25 @@ ls > out.txt
 ```
 echo buy milk >> out.txt
 ```
+
+#### Pipes
+Allows to pass the output of one command to another command.
+```
+Sort the output of grep
+grep 1978 film.tsv | sort 
+```
+
+#### Command Substitution
+Replace a command with its output using `$()`
+```
+echo "hello $(whoami)"
+echo "Buy milk" >> "notes$(date).txt"
+
+Older form uses backticks
+echo "hello `whoami`"
+```
+:memo: Use double quotes so output with spaces is taken a one string. This keeps command substitution intact.
+
+
+
 
