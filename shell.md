@@ -121,3 +121,18 @@ touch {a..c}{1..3}.txt => touch a1.txt a2.txt a3.txt b1.txt (and so on)
 mv *{txt,jpg} Documents => mv *txt *jpg Documents
 mv filea?.{jpg,txt} Documents => mv filea?.jpg filea?.txt Documents
 ```
+:tip: Use `echo` to try out brace and wildcard expansion
+```
+echo a{1..3}
+echo D*
+```
+#### Output Redirection
+* Save command output to a file with `>`
+```
+ls > out.txt
+```
+* Append command output to a file with `>>`
+```
+echo buy milk >> out.txt
+```
+
