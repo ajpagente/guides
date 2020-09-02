@@ -116,4 +116,8 @@ mv file.{jpg,txt} dir => mv file.jpg file.txt dir
 Using ranges:
 touch {a..c}{1..3}.txt => touch a1.txt a2.txt a3.txt b1.txt (and so on)
 ```
-  
+:information_source: __Brace expansion comes before wildcard expansion__
+```
+mv *{txt,jpg} Documents => mv *txt *jpg Documents
+mv filea?.{jpg,txt} Documents => mv filea?.jpg filea?.txt Documents
+```
