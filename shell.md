@@ -104,4 +104,16 @@
   * A _caret_ `^` reverses the meaning. 
     * Example `[^art]` matches any character except a,r,t
   * _Ranges_ example: `[a-z],[0-9],[A-C3-6]`
+
+#### Brace Expansion
+Brace expansion generates strings
+Syntax: __pre{list,of,strings}post__
+Examples:
+```
+touch {a,b,c}.txt => touch a.txt b.txt c.txt
+mv file.{jpg,txt} dir => mv file.jpg file.txt dir
+
+Using ranges:
+touch {a..c}{1..3}.txt => touch a1.txt a2.txt a3.txt b1.txt (and so on)
+```
   
