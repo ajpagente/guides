@@ -154,6 +154,32 @@ echo "hello `whoami`"
 ```
 :memo: Use double quotes so output with spaces is taken a one string. This keeps command substitution intact.
 
+#### Movement Keys
+:memo: To use `Alt` enable _Use Option as Meta key_ in the Terminal Keyboard preferences
+* `Ctrl-a` Start of line
+* `Ctrl-e` End of line
+* `Ctrl-f` or `Right arrow` Forward 1 character
+* `Ctrl-b` or `Left arrow` Backward 1 character
+* `Alt-f` or `Command-left` Forward 1 word
+* `Alt-b` or `Command-right` Back 1 word
 
+#### Deletion Keys
+* `Ctrl-d` or `Del` Delete a character
+* `Ctrl-h` or `Backspace` Delete a character backward
+* `Alt-d` Delete a word
+* `Ctrl-w` or `Alt-backspace` Delete a word backward
+* `Ctrl-k` Delete the rest of the line
+* `Ctrl-u` Delete from the start of the line
 
+#### Miscellaneous Keys
+* `Ctrl-c` Ends a running program
+* `Ctrl-d` Exit bash, End `cat > x` 
+* `up arrow` or `Ctrl-p` Previous line in history
+* `down arrow` or `Ctrl-n` Next line in history
+* `Ctrl-r` Search back in history
+
+#### Search history with `Ctrl-r`
+* After typing a keyword, keep pressing `Ctrl-r` to cycle through matching items
+* Use `Ctrl-c` to exit the search
+* To edit/use the command, press any arrow key to exit search
 
