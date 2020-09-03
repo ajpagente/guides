@@ -183,3 +183,8 @@ echo "hello `whoami`"
 * Use `Ctrl-c` to exit the search
 * To edit/use the command, press any arrow key to exit search
 
+### Filtering and Processing Text
+#### Editors
+* __nano__
+* __vi__
+* __emacs__
