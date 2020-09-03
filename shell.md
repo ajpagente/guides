@@ -188,3 +188,30 @@ echo "hello `whoami`"
 * __nano__
 * __vi__
 * __emacs__
+
+#### Sorting with `sort`
+* Sort the contents of a text file
+```
+sort <file>
+```
+* Sort based on the 2nd column. The column must be space separated.
+The sorting is based on the ASCII value of the character.
+```
+sort -k2 <file>
+```
+* Sort numerically (assuming the reference column is a number)
+```
+sort -nk2 <file>
+```
+* Reverse sort
+```
+sort -rnk2 <file>
+```
+* Using `uniq` with sort
+`uniq` filters out duplicate lines and has the option to count occurence with `-c`.
+```
+sort -k2 <file> | uniq -c
+```
+
+
+
