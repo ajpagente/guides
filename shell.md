@@ -214,5 +214,21 @@ sort -k2 <file> | uniq -c
 ```
 
 #### Head and Tail
+* `head` shows the beginning of an output stream
+```
+List the directory content sorted by size and only display the first 10 lines of the output
+ls -lS | head
 
+To show the first 2 lines
+ls -lS | head -n 2
+```
+* `tail` shows the end of an output stream
+``
+List the directory content reverse sorted by size and only display the last line of the output
+ls -lrS | tail -n 1
+```
+* `tail` can be used to "follow" a file while it is being updated
+```
+tail -f auth.log
+```
 
