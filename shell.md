@@ -326,6 +326,29 @@ tr \\t \; < <file> > <file>
   * Very useful for column-oriented files
 * __Perl__, __Python__, __Ruby__
 
-
-
-
+#### Working with column-based text
+The following commands can work with column-based text
+* `sort`
+`sort` assumes space delimiter by default
+```
+Sort numerically based on second column. Use semicolon delimiter.
+sort -nk2 -t\; <file>
+```
+* `cut`
+`cut` assumes tab delimiter by default
+```
+Cut out lines based on second column. Use semicolon delimiter.
+cut -f 2 -d\; <file>
+```
+* `paste`
+`paste` merges corresponding or subsequent lines of files
+```
+Paste together contents of files ending with "grades"
+paste *grades
+```
+* `join`
+`join` performs an ``equality join'' on the specified files and writes the result to the standard output
+```
+If the key is the same, join simply takes the key and shows the value from all files
+join <file 1> <file 2>
+```
