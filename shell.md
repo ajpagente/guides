@@ -269,4 +269,63 @@ grep -v "^$" <file>
 Filter out empty lines and lines with a certain pattern
 grep -Ev "^$|<filter>" <file>
 ```
+* Other options
+  * `-c` counts occurence
+  * `-l` shows line number of occurence
+
+#### Searching for files with `find`
+* Find files in a directory and all its subdirectory
+```
+find /usr
+```
+* Find a file with a certain name
+```
+find /usr -name <file name>
+```
+* Find with wildcard
+```
+find /usr -name '*txt'
+```
+* Find then execute a command on the found file
+```
+Find a txt file with the word "curious" and only show the file name
+find . -name '*txt` -exec -l curious {} \;
+```
+
+#### Replacing characters with `tr`
+`tr` does not accept filename as input. You have to use pipe.
+* Replacing character
+```
+Replace uppercase S with lowercase s
+cat <file> | tr S s
+```
+* Another way of redirection
+```
+Redirect file content to tr
+tr S s < <file>
+```
+* Escaping from the command line
+```
+Search for semi-colon in a file. Semicolon splits commands in bash so it has to be escaped
+grep \; <file>
+```
+* Replace all tabs with semicolon
+```
+\t means <tab>. Escape it so <tab> is passed to grep. The output of tr is redirected to a file.
+tr \\t \; < <file> > <file>
+```
+
+#### Advanced Tools
+* `sed`
+  * Stream editor
+  * Transform text
+  * The most common use case is to replace words
+  * `sed 's/old/new/g'`
+* `awk`
+  * Complete programming language
+  * Very useful for column-oriented files
+* __Perl__, __Python__, __Ruby__
+
+
+
 
