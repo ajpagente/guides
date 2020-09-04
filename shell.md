@@ -223,12 +223,50 @@ To show the first 2 lines
 ls -lS | head -n 2
 ```
 * `tail` shows the end of an output stream
-``
+```
 List the directory content reverse sorted by size and only display the last line of the output
 ls -lrS | tail -n 1
 ```
 * `tail` can be used to "follow" a file while it is being updated
 ```
 tail -f auth.log
+```
+
+#### Count with `wc`
+* Show number of lines, words, bytes in a file
+```
+wc <file>
+```
+* Show only the number of linesin a file
+```
+wc -l <file>
+```
+
+#### Searching for text with `grep`
+* Find the lines with a certain word
+```
+grep <word> <file>
+```
+* Find all files with a certain word
+```
+grep <word> <wildcard + file name pattern>
+```
+* Case-insensitive search
+```
+grep -i <word> <wildcard + file name pattern>
+```
+* Filtering out lines
+```
+grep -v <filter> <file>
+```
+* `grep` supports regular expressions (regex)
+```
+Filter out empty lines
+grep -v "^$" <file>
+```
+* Using extended regex to combine regex patterns
+```
+Filter out empty lines and lines with a certain pattern
+grep -Ev "^$|<filter>" <file>
 ```
 
