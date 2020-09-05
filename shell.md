@@ -354,3 +354,89 @@ join <file 1> <file 2>
 ```
 
 ### Jobs and Processes
+#### Background Jobs
+* To pause a command press `Ctrl-Z`
+* To resume a paused command, type `fg` for foreground
+* Send a paused command to the background by typing `bg` for background
+* Run a command and send it to the background: `<command> &`. Make sure to put the ampersand at the end. Example if you want to redirect the command's output.
+
+#### Killing Programs and Processes
+* Kill foreground programs with `Ctrl-z`
+* End any program with `kill`
+  * Can only end processes you own
+  * Kill by job ID: `kill %<job ID>`
+  * Kill by command name: `kill %<command>`
+* `bg` and `fg` also works with job ID. Example: `fg %<job ID>`
+* List running jobs with `jobs`
+* All running programs has a process ID
+* Use `ps -e` with `grep` to find the process ID of a running program
+* Kill by process ID: `kill <process ID>`
+  * "hard" kill with `-KILL` as in `kill -KILL <process ID>`
+* Use `xkill` to kill xWindow programs (Linux only). After typing `xkill` you will be prompted to choose the program to kill.
+* Use `pkill <part of name>` to kill a program. Be careful as this command is very powerful.
+
+#### Inspecting Processes
+* Use `jobs` to list bash jobs for the current shell
+* Use `ps` to list running processes
+  * `ps` without any option on Linux displays processes running under the current shell
+  * `ps` without any option on Mac displays all processes running on a terminal
+  * `ps -e` displays all processes on Linux
+  * `ps ax` displays all processes on Mac
+  * `ps -ef` displays all processes including its owner on Linux
+  * `ps aux` displays all processes including its owner on Mac
+* `top` list all processes in real time. The most CPU intensive processes are shown on top.
+  * On Linux:
+    * `u` allows you to enter the process owner in order to filter the output
+    * `k` allows you to enter the process ID to kill the process
+    
+### Customization
+#### Aliases
+* `alias` displays all set aliases
+* To create an alias: `alias ls='ls --color=auto'` (colorize output in Linux) use `ls -GF` for Mac. `F` displays `/` for directories.
+  * The above method only applies to the current shell session
+* To run the original command use `\<command>`
+
+#### Saving Customization
+* `~/.bashrc` and `~/.profile` is present by default in Linux but not in Mac
+* `.bashrc` is run when not in a non-login shell (ssh is a login shell)
+* `.profile` is run on login shell
+* Most people simply run one file from the other. Example in `.profile` add `source ~/.bashrc`
+* MacOS Terminal.app runs bash as a login shell
+
+#### Enviroment Variable
+* Append to the path: `PATH="$PATH:<path to append>"`
+  * To avoid overwriting or bypassing commands, always append your path to the end
+* `PS1` is the environment variable for the shell prompt
+* By default, `echo $PS1` is set to `\h:\W \u\$` in Mac
+  * `\h` stands for host name
+  * `\W` stands for current working directory
+  * `\u` stands for current logged in user
+* Example, append an environment variable to `.bashrc`
+  * `echo 'PS1="\h:\W \u [\t] \$"'` >> ~/.bashrc
+* `env` lists all environment variables
+* When running for example `less`, pressing the `v` key opens the file in an editor. The default editor in Mac is `vim` if the `EDITOR` environment variable is not set.
+* A variable is local to the shell. You can export it to make it available to the commands or programs started from bash. Use `export <VARIABLE NAME>`
+
+#### Setting Your Default Shell
+* Use `chsh` to change shell. You will be prompted with your password
+  * In Linux, you will be prompted to enter the path to the binary of the new shell.
+  * In Mac, a file will be opened in your default editor and you can change the Shell value
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
