@@ -72,6 +72,14 @@ This method has been tested on MacOS.
 hg status -un | xargs rm
 ```
 
+## Logs
+### View changes in a revision
+To view the changes in the files in a revision.
+The revision can be the short number or long number. A revision is presented in the format: `<short>:<long>`
+```
+hg log -p -r <revision>
+```
+
 ## Miscellaneous
 ### Bypass certificate checks
 It is not recommended to bypass certificate checks. This method should not be used if you are able to check the repository certificate.
