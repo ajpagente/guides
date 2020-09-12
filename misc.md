@@ -8,3 +8,7 @@ Temporary collection until there is enough content for a separate file.
 ## Hexdump
 * Canonical hex and ASCII display: `hexdump -C <filename>`
 
+## Yara
+
+### Yara generation
+[Yargen](https://github.com/Neo23x0/yarGen) - YARA rule generator
