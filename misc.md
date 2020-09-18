@@ -17,6 +17,6 @@ Temporary collection until there is enough content for a separate file.
 [Github YARA rule repo](https://github.com/Yara-Rules/rules)
 
 ### Alternative Tools
-[Loki](https://github.com/Neo23x0/Loki) - use to scan disk for Indicators of Compromise
-[ClamAV](https://www.clamav.net/) - opensource antivirus that can run YARA rules. ClamAV has unpacking capabilities.
-[Volatility](https://github.com/volatilityfoundation/volatility) - scans memory for artifacts.
+* [Loki](https://github.com/Neo23x0/Loki) - use to scan disk for Indicators of Compromise
+* [ClamAV](https://www.clamav.net/) - opensource antivirus that can run YARA rules. ClamAV has unpacking capabilities.
+* [Volatility](https://github.com/volatilityfoundation/volatility) - scans memory for artifacts.
