@@ -12,3 +12,6 @@ Temporary collection until there is enough content for a separate file.
 
 ### Yara generation
 [Yargen](https://github.com/Neo23x0/yarGen) - YARA rule generator
+
+### Yara rules
+[Github YARA rule repo](https://github.com/Yara-Rules/rules)
