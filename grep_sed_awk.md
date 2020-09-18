@@ -12,4 +12,15 @@ grep '^[a-z_]' <additional parameters>
 ```
 
 # sed
+## Display the first 5 lines of a file
+`-n` suppresses standard output as sed will display the contents of the file as well as the result of the sed command. 
+`p` is the print command. 
+The example prints the first 5 lines of the file
+```
+sed -n '1,5 p' /etc/passwd
+```
 
+## Using regular expressions
+```
+sed -n '/^user/ p' /etc/passwd
+```
