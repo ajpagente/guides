@@ -1,8 +1,16 @@
 # grep
+grep allows you to search output or files.
+
 ## Enabling color
 Enable color to easily see matching words
 ```
 grep --color=auto <additional parameters>
+```
+
+## Searching for string in files
+Search for "pam_login" in all files in _/etc/pam.d_ directory
+```
+grep pam_login /etc/pam.d/*
 ```
 
 ## Using regular expressions
@@ -10,6 +18,12 @@ The regular expression filters a line starting with lowercase a to z or an under
 ```
 grep '^[a-z_]' <additional parameters>
 ```
+
+## Useful parameters
+* `-i` for case-insensitive search
+* `-v` for inverse match wherein non-matching lines is shown
+* `-c` count occurences
+
 
 # sed
 ## Display the first 5 lines of a file
