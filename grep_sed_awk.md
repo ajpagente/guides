@@ -23,6 +23,9 @@ grep '^[a-z_]' <additional parameters>
 * `-i` for case-insensitive search
 * `-v` for inverse match wherein non-matching lines is shown
 * `-c` count occurences
+* `-A` specifies how many lines after the match we want to include. Example, `-A2` means 2 lines
+* `-B` specifies how many lines before the match we want to include
+* `-C` specifies how many lines before and after the match we want to include
 
 
 # sed
