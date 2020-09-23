@@ -19,6 +19,7 @@
 
 ### File Management
 * View file content (dumps file content): `cat <file>`
+* View file and show non-printing characters: `cat -vet <file>`
 * View file content and allow browsing: `less <file>`
   * Move down a page: `space`
   * Move back a page: `b`
