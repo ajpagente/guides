@@ -79,9 +79,27 @@ sed '/^server 3/ a server ntp.example.com' /etc/ntp.conf
 sed '/^server 0/ i server ntp.example.com' /etc/ntp.conf
 ```
 * __Delete__ lines: `d`
-Delete line beginning with "server 0.ubuntu" to "server 9.ubuntu". `\s` stands for space.
+Delete line beginning with "server 0.ubuntu" to "server 9.ubuntu". `\s` stands for a single whitespace. `\.` escapes the dot character.
 ```
 sed '/^server\s[0-9]\.ubuntu/ d' /etc/ntp.conf
+```
+
+### Multiple sed expressions
+* Multiple expressions can be written on the command line by including brace brackets within the quoted sed instructions\
+```
+sed '{
+/^server 0/ i ntp.example.com
+/^server\s[0-9]\.ubuntu/ d
+}' /etc/ntp.conf
+```
+* For code reuse implement sed files
+The sed file can be referenced with the `-f` option
+```
+cat ntp.sed
+/^server 0/ i ntp.example.com
+/^server\s[0-9]\.ubuntu/ d
+
+sed -f ntp.sed /etc/ntp.conf
 ```
 
 ## Using regular expressions
