@@ -117,11 +117,18 @@ sed '/^#/ d ; /^$/ d' /etc/ntp.conf
 
 ## Inline editing
 sed does not edit the file by default. To edit the file use `-i`.
-To created a backup before editing, use `-i.bak` which created a backup file named <file>.bak
+To create a backup before editing, use `-i.bak` which created a backup file named <file>.bak
 ```
 sed -i.bak '/^#/ d ; /^$/ d' /etc/ntp.conf
 ```
-  
+
+## Bonus: Remote edits using SSH
+`-t` assigns a TTY allowing for sudo password\
+`/tmp/ntp.sed` is a file on the remote server. Copy this file using `scp`. For example: `scp ntp.sed user@server:/tmp/`
+```
+ssh -t user@server sudo sed -i.bak -f /tmp/ntp.sed /etc/ntp.conf
+```
+
 # awk
 ## Basic structure
 The basic structure of awk is `awk '{<command>}' <file>`\
