@@ -56,8 +56,33 @@ sed -n '/^root/ p' /etc/passwd
 ```
 
 ### Substitute
-The substitute command is your searech and replace tool
+The substitute command is your searech and replace tool\
+The first character following the `s` represents the delimiters, often the `/` is used\
+The format is `sed '[range] s/<string>/<replacement>/' <file>`\
+Only the first occurrence in the of the string is replaced. To perform a global replace, add the `g` option\
+__Example__: Replace the beginning of line 6-9 with 4 spaces. Perform a global replace.
+```
+sed '6,9 s/^/    /g' file.sh
+```
+__Example__: For all lines that begins with "gret", replace "/bin/bash" with "/bin/sh". The delimiter is `@`, print the result to stdout.
+```
+sed -n '/^gret/ s@/bin/bash@/bin/sh@p' /etc/passwd
+```
 
+### Append, Insert, Delete
+* __Append__ a new line after a line: `a`
+```
+sed '/^server 3/ a server ntp.example.com' /etc/ntp.conf
+```
+* __Insert__ a new line before a line: `i`
+```
+sed '/^server 0/ i server ntp.example.com' /etc/ntp.conf
+```
+* __Delete__ lines: `d`
+Delete line beginning with "server 0.ubuntu" to "server 9.ubuntu". `\s` stands for space.
+```
+sed '/^server\s[0-9]\.ubuntu/ d' /etc/ntp.conf
+```
 
 ## Using regular expressions
 ```
