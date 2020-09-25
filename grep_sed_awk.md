@@ -29,13 +29,35 @@ grep '^[a-z_]' <additional parameters>
 
 
 # sed
-## Display the first 5 lines of a file
-`-n` suppresses standard output as sed will display the contents of the file as well as the result of the sed command.\
-`p` is the print command.\
-The example prints the first 5 lines of the file
+## Commands
+### Print
+`p` will print the pattern space (matched lines)\
+* __Suppressing standard output__
+`-n` suppresses standard output as sed will display the contents of the file as well as the result of the sed command\
+__Example__
+```
+sed -n 'p' /etc/passwd
+```
+
+* __Specifying a range__
+Adding a range will only print matched lines
+__Example__: Prints the first 5 lines of the file
 ```
 sed -n '1,5 p' /etc/passwd
 ```
+__Example__: Prints the the 5th line until the end of the file
+```
+sed -n '5,$ p' /etc/passwd
+```
+* __Specifying regular expressions__
+__Example__: Display lines beginning with _root_
+```
+sed -n '/^root/ p' /etc/passwd
+```
+
+### Substitute
+The substitute command is your searech and replace tool
+
 
 ## Using regular expressions
 ```
