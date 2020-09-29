@@ -66,6 +66,11 @@ hg log -r "parents(min(branch(<tag or branch)))"
 3. Push the tag to the repository
 
 ## Reverting Changes
+### Discard local changes
+```
+hg revert --all
+```
+
 ### Remove untracked files
 This method has been tested on MacOS.
 ```
